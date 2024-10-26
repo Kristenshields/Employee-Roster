@@ -1,0 +1,1 @@
+SELECT departments.department_name, roles.title, roles.salary, employees.first_name, employees.last_name
