@@ -1,0 +1,11 @@
+{
+  "name": "challenge-10-employee-tracker",
+  "version": "1.0.0",
+  "description": "employee tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm install"
+  },
+  "author": "",
+  "license": "ISC"
+}
