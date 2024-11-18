@@ -1,17 +1,25 @@
 {
   "name": "challenge-10-employee-tracker",
   "version": "1.0.0",
+  "description": "",
   "type": "module",
-  "description": "employee tracker",
   "main": "index.js",
   "scripts": {
     "test": "npm install",
-    "build": "node server.js"
+    "start": "node main/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^12.0.1",
-    "pg": "^8.13.1"
+    "db": "^6.0.3",
+    "dotenv": "^16.4.5",
+    "inquirer": "12.1.0",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/pg": "^8.11.6",
+    "inquirer": "^8.1.2",
+    "typescript": "^5.2.2"
   }
 }
