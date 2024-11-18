@@ -13,12 +13,12 @@ const client = new Client({
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
+    database: process.env.DB_DATABASE,
   });
   
 
 client.connect()    
-    .then(() =>  console.log('Connected to the database'))
+    .then(() =>  console.log('Connected to postgreSQL database'))
      .catch(err => console.error("Error connecting to database", err.stack));
         
      options();
@@ -92,7 +92,7 @@ function options() {
 }
 
 function viewAllDepartments() {
-    client.query('SELECT * FROM department')
+    client.query('SELECT * FROM departments')
         .then(result => {
             console.table(result.rows);
             showMenu();
@@ -119,7 +119,7 @@ function addDepartment() {
     // Code to add a department
 }
 function viewAllRoles() {
-    client.query('SELECT * FROM role')
+    client.query('SELECT * FROM roles')
         .then(result => {
             console.table(result.rows);
             showMenu();
@@ -156,7 +156,7 @@ function addRole() {
     // Code to add a role
 }
 function viewAllEmployees() {
-    client.query('SELECT * FROM employee')
+    client.query('SELECT * FROM employees')
         .then(result => {
             console.table(result.rows);
             showMenu();

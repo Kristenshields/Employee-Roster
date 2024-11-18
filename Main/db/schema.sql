@@ -16,7 +16,7 @@ CREATE TABLE roles (
 );
 
 CREATE TABLE employees (
-    id SERIAL PRIMARY KEY,
+   id SERIAL PRIMARY KEY,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
     role_id INTEGER REFERENCES roles(id),
