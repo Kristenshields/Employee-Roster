@@ -109,7 +109,7 @@ function addDepartment() {
             message: 'Enter the name of the department:'
         }
     ]).then(answers => {
-        client.query('INSERT INTO department (name) VALUES ($1)', [answers.name])
+        client.query('INSERT INTO departments (department_name) VALUES ($1)', [answers.name])
             .then(() => {
                 console.log('Department added successfully!');
                 showMenu();
@@ -146,7 +146,7 @@ function addRole() {
             message: 'Enter the department id for the role:'
         }
     ]).then(answers => {
-        client.query('INSERT INTO role (title, salary, department_id) VALUES ($1, $2, $3)', [answers.title, answers.salary, answers.department_id])
+        client.query('INSERT INTO roles (title, salary, department_id) VALUES ($1, $2, $3)', [answers.title, answers.salary, answers.department_id])
             .then(() => {
                 console.log('Role added successfully!');
                 showMenu();
@@ -191,7 +191,7 @@ function addEmployee() {
     ]).then((answers) => {
         console.log(answers);
         const manager_id = answers.manager_id ? answers.manager_id : null;
-        client.query('INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ($1, $2, $3, $4)', [answers.first_name, answers.last_name, answers.role_id, manager_id])
+        client.query('INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES ($1, $2, $3, $4)', [answers.first_name, answers.last_name, answers.role_id, manager_id])
             .then(() => {
                 console.log('Employee added successfully!');
                 showMenu();
@@ -213,7 +213,7 @@ function updateEmployeeRole() {
             message: 'Enter the role id of the employee:'
         }
     ]).then(answers => {
-        client.query('UPDATE employee SET role_id = $1 WHERE id = $2', [answers.role_id, answers.employee_id])
+        client.query('UPDATE employees SET role_id = $1 WHERE id = $2', [answers.role_id, answers.employee_id])
             .then(() => {
                 console.log('Employee role updated successfully!');
                 showMenu();
